@@ -2,7 +2,7 @@
 <script nonce="{{nonce}}">
     document.addEventListener('DOMContentLoaded', function () {
 
-        async function fetchDate() {
+        async function fetchMessage() {
             try {
                 const response = await fetch(
                     `/plugin/customTabController/example`,
@@ -28,7 +28,7 @@
 
         const testCallBtn = document.getElementById('testCallBtn');
         testCallBtn.addEventListener('click', function () {
-            fetchDate();
+            fetchMessage();
         });
     });
 </script>
