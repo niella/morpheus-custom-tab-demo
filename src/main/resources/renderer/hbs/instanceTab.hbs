@@ -17,12 +17,15 @@
                 const result = await response.text();
 
                 if (response.ok) {
-                    console.log('Date fetched successfully');
+                    console.log('Message fetched successfully: ' + result);
+                    document.getElementById('messageField').innerHTML = result
                 } else {
-                    console.log('Date fetch gone wrong') //: ' + result);
+                    console.log('Message fetch gone wrong') //: ' + result);
+                    document.getElementById('messageField').innerHTML = "Error fetching message"
                 }
             } catch (error) {
                 console.error('Error updating dates:', error);
+                document.getElementById('messageField').innerHTML = "Error fetching message: " + error
             }
         }
 
@@ -34,5 +37,6 @@
 </script>
 <div>
     <button id="testCallBtn">Test Call</button>
+    <div id="messageField"></div>
 </div>
 
